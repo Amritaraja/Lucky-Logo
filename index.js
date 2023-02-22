@@ -39,10 +39,10 @@ inquirer.prompt([
     else {
         shape = new Square() 
     }
-shape.setColor(answers.shapeColor) 
+shape.logoColor(answers.shapeColor) 
 const svg = new SVG()
-svg.setText(answers.text, answers.color)
-svg.setShape(shape) 
+svg.logoText(answers.text, answers.color)
+svg.logoShape(shape) 
 return fs.writeFileSync ("./examples/Logo.svg", svg.render())
 })
 .catch (err => {
